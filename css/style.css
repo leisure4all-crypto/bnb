@@ -493,6 +493,54 @@ h1 {
   background: var(--sand);
 }
 
+.lunch-scroller {
+  margin-top: 1.15rem;
+}
+
+.review-scroller > li {
+  flex-basis: min(74vw, 320px);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 1.15rem 1.15rem 1.25rem;
+  border: 1px solid rgba(51, 41, 35, 0.12);
+  border-radius: 18px;
+  background: var(--ivory-card);
+}
+
+.review-card__source {
+  font-weight: 600;
+  color: var(--olive);
+}
+
+.review-card__meta {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.review-card__text {
+  margin-top: 0.8rem;
+  line-height: 1.7;
+}
+
+.review-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.review-more a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .group-panel__text {
   max-width: 40rem;
   margin-top: 0.85rem;

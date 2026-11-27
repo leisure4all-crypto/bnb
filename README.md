@@ -20,7 +20,9 @@
 
 페이지 맨 위의 ‘바비앤밥 소개’는 `js/site-data.js`의 `about.paragraphs`입니다. 문장을 고치거나 줄을 지우면 화면에 바로 반영됩니다.
 
-메뉴 아래 ‘단체 도시락 주문’은 `group.paragraphs`입니다. `group.priceNote`는 비어 있으면 나오지 않습니다. 공간 사진이 많으면 메뉴처럼 옆으로 넘깁니다.
+메뉴 아래 ‘단체 도시락 주문’은 `group.paragraphs`와 `group.images`입니다. `group.priceNote`는 비어 있으면 나오지 않습니다. 도시락 사진과 공간 사진이 많으면 옆으로 넘깁니다. 창가 칸은 `images/space-window.jpg`입니다.
+
+후기는 `reviews.items`입니다. `source`에는 네이버 방문자 리뷰 또는 당근 후기를 적고, `text`가 비어 있으면 그 카드는 숨깁니다. 카드가 많으면 옆으로 넘깁니다.
 
 `about.ownerName`, `about.openedYear`, `about.story`는 비어 있으면 나오지 않습니다. 확인된 내용이 있을 때만 채웁니다.
 
