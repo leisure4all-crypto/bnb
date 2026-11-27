@@ -485,6 +485,23 @@ h1 {
   text-decoration: underline;
 }
 
+.section--about {
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.about__layout {
+  max-width: 46rem;
+}
+
+.about__body {
+  max-width: 40rem;
+}
+
+.about__body p + p {
+  margin-top: 0.9rem;
+}
+
 .footer {
   background: var(--coffee);
   color: var(--ivory);

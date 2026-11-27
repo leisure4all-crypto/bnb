@@ -2,7 +2,8 @@
 // 이 파일을 저장한 뒤 브라우저를 새로고침하면 화면에 반영됩니다.
 // 사진 파일은 images 폴더에 넣고, 아래 image 경로와 파일명을 맞춥니다.
 //
-// 비워 두면 화면에 나오지 않는 항목: hours.open, parking.dedicated, groupSeats
+// 비워 두면 화면에 나오지 않는 항목:
+// hours.open, parking.dedicated, groupSeats, about.ownerName, about.openedYear, about.story
 
 const SITE_DATA = {
   name: "바비앤밥",
@@ -95,5 +96,21 @@ const SITE_DATA = {
     text: "포장, 소규모 모임, 단체 도시락은 전화 또는 당근으로 문의해 주세요.",
     phoneLabel: "전화 문의",
     daangnLabel: "당근에서 문의",
+  },
+
+  // 하단 링크 바로 위에 나오는 소개입니다. paragraphs의 문장을 고치거나 줄을 빼면 화면에 반영됩니다.
+  about: {
+    title: "바비앤밥 소개",
+    paragraphs: [
+      "석사동 행정복지센터 뒤편 골목의 브런치 카페입니다.",
+      "스크램블에그와 라이스커틀릿을 곁들인 브런치를 준비하고, 파스타와 밥 메뉴도 함께 냅니다.",
+      "반려동물과 함께 오셔도 되고, 포장과 소규모 모임, 단체 도시락은 전화나 당근으로 문의하실 수 있습니다.",
+      "잠시 편안하게 머물다 가실 수 있도록 준비합니다.",
+    ],
+    // 확인된 뒤에만 입력합니다. 비어 있으면 숨깁니다.
+    // openedYear는 연도만 적습니다. 예: "2019"
+    ownerName: "",
+    openedYear: "",
+    story: "",
   },
 };
