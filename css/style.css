@@ -296,9 +296,13 @@ h1 {
 }
 
 .photo--hero {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1188 / 1280;
   border-radius: 22px;
   box-shadow: 0 16px 40px rgba(51, 41, 35, 0.08);
+}
+
+.photo--hero .photo__img {
+  object-position: center center;
 }
 
 .photo--tall {
@@ -689,7 +693,7 @@ h1 {
   }
 
   .photo--hero {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1188 / 1280;
   }
 
   .photo--hero .photo__icon svg {
