@@ -373,7 +373,8 @@ h1 {
   font-size: 0.95rem;
 }
 
-.menu-scroller {
+.menu-scroller,
+.space-scroller {
   display: flex;
   gap: 0.9rem;
   margin: 0;
@@ -386,16 +387,19 @@ h1 {
   scrollbar-color: rgba(78, 94, 69, 0.55) transparent;
 }
 
-.menu-scroller::-webkit-scrollbar {
+.menu-scroller::-webkit-scrollbar,
+.space-scroller::-webkit-scrollbar {
   height: 8px;
 }
 
-.menu-scroller::-webkit-scrollbar-thumb {
+.menu-scroller::-webkit-scrollbar-thumb,
+.space-scroller::-webkit-scrollbar-thumb {
   background: rgba(78, 94, 69, 0.55);
   border-radius: 99px;
 }
 
-.menu-scroller > li {
+.menu-scroller > li,
+.space-scroller > li {
   display: flex;
   flex: 0 0 min(72vw, 280px);
   scroll-snap-align: start;
@@ -445,6 +449,14 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.space-card {
+  width: 100%;
+}
+
+.space-card .photo {
+  width: 100%;
+}
+
 .space-card figcaption {
   margin-top: 0.75rem;
   font-weight: 600;
@@ -482,8 +494,12 @@ h1 {
 }
 
 .group-panel__text {
-  max-width: 38rem;
-  margin-top: 1rem;
+  max-width: 40rem;
+  margin-top: 0.85rem;
+}
+
+.group-panel__text + .group-panel__text {
+  margin-top: 0.45rem;
 }
 
 .visit__layout {
@@ -520,8 +536,9 @@ h1 {
 }
 
 .section--about {
-  padding-top: 3.5rem;
-  border-top: 1px solid var(--line);
+  padding-top: 2.25rem;
+  padding-bottom: 1rem;
+  border-top: 0;
 }
 
 .about__layout {
@@ -684,6 +701,11 @@ h1 {
 
   .hero.section {
     padding-top: 1.35rem;
+  }
+
+  .section--about {
+    padding-top: 1.6rem;
+    padding-bottom: 0.4rem;
   }
 }
 
