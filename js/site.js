@@ -29,6 +29,7 @@ function render(app, data) {
     menuHtml(data),
     groupHtml(data, phoneHref),
     spaceHtml(data),
+    reviewsHtml(data),
     visitHtml(data, phoneHref),
     "</main>",
     footerHtml(data),
@@ -47,6 +48,7 @@ function headerHtml(data) {
     "<ul>",
     "<li><a href=\"#menu\">메뉴</a></li>",
     "<li><a href=\"#space\">공간</a></li>",
+    "<li><a href=\"#reviews\">후기</a></li>",
     "<li><a href=\"#visit\">찾아오시는 길</a></li>",
     "</ul>",
     "</nav>",
@@ -218,6 +220,67 @@ function groupHtml(data, phoneHref) {
     externalLink(data.links.daangn, group.daangnLabel || "당근에서 주문", "btn btn--ghost"),
     "</div>",
     "</div>",
+    "</div>",
+    "</section>",
+  ].join("");
+}
+
+function reviewsHtml(data) {
+  const reviews = data.reviews || {};
+  const items = (reviews.items || []).filter(function (item) {
+    return item && String(item.text || "").trim();
+  });
+  if (!items.length) return "";
+
+  const cards = items
+    .map(function (item) {
+      const rating = String(item.rating || "").trim();
+      const meta = [item.author, rating ? rating + "점" : "", item.date]
+        .map(function (part) {
+          return String(part || "").trim();
+        })
+        .filter(Boolean)
+        .join(" · ");
+      return [
+        "<li>",
+        '<article class="review-card">',
+        '<p class="review-card__source">',
+        escapeHtml(item.source || ""),
+        "</p>",
+        '<p class="review-card__meta">',
+        escapeHtml(meta),
+        "</p>",
+        '<p class="review-card__text">',
+        textToHtml(item.text),
+        "</p>",
+        "</article>",
+        "</li>",
+      ].join("");
+    })
+    .join("");
+
+  const more = [
+    reviews.naverUrl
+      ? "<li>" + externalLink(reviews.naverUrl, "네이버 방문자 리뷰", "") + "</li>"
+      : "",
+    reviews.daangnUrl
+      ? "<li>" + externalLink(reviews.daangnUrl, "당근 후기", "") + "</li>"
+      : "",
+  ].join("");
+
+  return [
+    '<section class="section section--reviews" id="reviews" aria-labelledby="reviews-title">',
+    '<div class="wrap">',
+    '<div class="section-head">',
+    '<h2 id="reviews-title" class="section-title">',
+    escapeHtml(reviews.title || "후기"),
+    "</h2>",
+    '<p class="menu-hint">옆으로 넘겨 보세요.</p>',
+    "</div>",
+    '<ul class="menu-scroller review-scroller" tabindex="0" aria-label="방문자 후기. 옆으로 스크롤할 수 있습니다.">',
+    cards,
+    "</ul>",
+    more ? '<ul class="review-more">' + more + "</ul>" : "",
     "</div>",
     "</section>",
   ].join("");
