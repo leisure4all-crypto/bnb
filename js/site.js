@@ -24,12 +24,12 @@ function render(app, data) {
   app.innerHTML = [
     headerHtml(data),
     "<main id=\"main\" tabindex=\"-1\">",
+    aboutHtml(data),
     heroHtml(data),
     menuHtml(data),
-    spaceHtml(data),
     groupHtml(data, phoneHref),
+    spaceHtml(data),
     visitHtml(data, phoneHref),
-    aboutHtml(data),
     "</main>",
     footerHtml(data),
     dockHtml(data, phoneHref),
@@ -145,8 +145,9 @@ function spaceHtml(data) {
     '<div class="wrap">',
     '<div class="section-head">',
     '<h2 id="space-title" class="section-title">공간</h2>',
+    '<p class="menu-hint">옆으로 넘겨 보세요.</p>',
     "</div>",
-    '<ul class="space-grid">',
+    '<ul class="space-scroller" tabindex="0" aria-label="공간 사진. 옆으로 스크롤할 수 있습니다.">',
     cards,
     "</ul>",
     noticesHtml(data.notices),
@@ -156,24 +157,38 @@ function spaceHtml(data) {
 }
 
 function groupHtml(data, phoneHref) {
-  const group = data.group;
+  const group = data.group || {};
+  const lines = (group.paragraphs || [group.text])
+    .map(function (line) {
+      return String(line || "").trim();
+    })
+    .filter(Boolean);
+  if (!lines.length && !group.phoneLabel && !group.daangnLabel) return "";
+
+  const priceNote = String(group.priceNote || "").trim();
+  if (priceNote) lines.push(priceNote);
+
+  const body = lines
+    .map(function (line) {
+      return '<p class="group-panel__text">' + textToHtml(line) + "</p>";
+    })
+    .join("");
+
   return [
     '<section class="section section--group" id="group" aria-labelledby="group-title">',
     '<div class="wrap">',
     '<div class="group-panel">',
     '<h2 id="group-title" class="section-title">',
-    escapeHtml(group.title),
+    escapeHtml(group.title || "단체 도시락 주문"),
     "</h2>",
-    '<p class="group-panel__text">',
-    textToHtml(group.text),
-    "</p>",
+    body,
     '<div class="hero__actions">',
     '<a class="btn btn--solid" href="',
     escapeAttr(phoneHref),
     '">',
-    escapeHtml(group.phoneLabel),
+    escapeHtml(group.phoneLabel || "전화로 주문"),
     "</a>",
-    externalLink(data.links.daangn, group.daangnLabel, "btn btn--ghost"),
+    externalLink(data.links.daangn, group.daangnLabel || "당근에서 주문", "btn btn--ghost"),
     "</div>",
     "</div>",
     "</div>",

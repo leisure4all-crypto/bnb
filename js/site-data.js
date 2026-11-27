@@ -270,6 +270,12 @@ const SITE_DATA = {
       icon: "store",
     },
     {
+      name: "내부",
+      image: "images/space-room.jpg",
+      alt: "매장 내부",
+      icon: "store",
+    },
+    {
       name: "골목 입구",
       image: "images/space-alley.jpg",
       alt: "바비앤밥 입구",
@@ -279,14 +285,21 @@ const SITE_DATA = {
 
   notices: ["반려동물 동반 가능", "포장·예약 문의"],
 
+  // 메뉴 바로 아래. 당근 소식에 매장이 쓴 단체 도시락 안내입니다. 가격은 구성마다 달라 비워 둡니다.
   group: {
-    title: "소규모 모임·단체 도시락",
-    text: "포장, 소규모 모임, 단체 도시락은 전화 또는 당근으로 문의해 주세요.",
-    phoneLabel: "전화 문의",
-    daangnLabel: "당근에서 문의",
+    title: "단체 도시락 주문",
+    paragraphs: [
+      "원하시는 구성으로 단체 도시락을 주문할 수 있습니다.",
+      "15인 이상은 춘천시내 기준 무료배달이 됩니다.",
+      "소규모 모임은 한 팀만 쓰는 공간으로, 메뉴와 가격을 조율해 문의할 수 있습니다.",
+    ],
+    phoneLabel: "전화로 주문",
+    daangnLabel: "당근에서 주문",
+    // 확정 가격이 있으면 적습니다. 비어 있으면 숨깁니다.
+    priceNote: "",
   },
 
-  // 하단 링크 바로 위에 나오는 소개입니다. paragraphs의 문장을 고치거나 줄을 빼면 화면에 반영됩니다.
+  // 페이지 맨 위, 첫 화면 앞에 나옵니다. paragraphs의 문장을 고치거나 줄을 빼면 화면에 반영됩니다.
   about: {
     title: "바비앤밥 소개",
     paragraphs: [
