@@ -127,6 +127,7 @@ function spaceHtml(data) {
           src: item.image,
           alt: item.alt || item.name,
           icon: item.icon || "window",
+          variant: "photo--tall",
         }),
         "<figcaption>",
         escapeHtml(item.name),

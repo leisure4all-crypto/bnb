@@ -36,9 +36,11 @@ const SITE_DATA = {
     facebook: "https://www.facebook.com/profile.php?id=100013673626427",
   },
 
+  // 아래 사진 파일은 네이버 플레이스 바비앤밥에 매장이 올린 메뉴·매장 사진입니다.
+  // 창가 사진(images/space-window.jpg)은 공식 사진이 없어 비어 있습니다.
   hero: {
     image: "images/hero.jpg",
-    alt: "창가의 브런치",
+    alt: "바비 좋아! 브런치",
     title: "춘천 석사동,\n브런치 한 접시",
     intro:
       "스크램블에그와 라이스커틀릿을 곁들인 브런치, 파스타와 든든한 밥 메뉴도 준비합니다.",
@@ -81,7 +83,7 @@ const SITE_DATA = {
     {
       name: "골목 입구",
       image: "images/space-alley.jpg",
-      alt: "골목 입구",
+      alt: "바비앤밥 입구",
       icon: "alley",
     },
   ],
