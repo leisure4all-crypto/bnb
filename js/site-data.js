@@ -15,7 +15,7 @@ const SITE_DATA = {
   // open이 비어 있으면 openPending 문구가 표시됩니다.
   hours: {
     days: "월~토",
-    open: "",
+    open: "11:10",
     close: "20:00",
     closed: "매주 일요일 휴무",
     openPending: "개점 시간 확인 후 입력",
@@ -52,204 +52,272 @@ const SITE_DATA = {
   menu: [
     {
       name: "바비 좋아! 브런치~세트",
+
+      category: "브런치",
       price: 14900,
       image: "images/menu-brunch.jpg",
       alt: "바비 좋아! 브런치~세트",
     },
     {
       name: "바비 좋아! 브런치~",
+
+      category: "브런치",
       price: 12900,
       image: "images/menu-brunch-plate.jpg",
       alt: "바비 좋아! 브런치~",
     },
     {
       name: "아보카도명란비빔밥",
+
+      category: "밥·포케",
       price: 11900,
       image: "images/menu-avocado-bibimbap.jpg",
       alt: "아보카도명란비빔밥",
     },
     {
       name: "새우포케",
+
+      category: "밥·포케",
       price: 11900,
       image: "images/menu-shrimp-poke.jpg",
       alt: "새우포케",
     },
     {
       name: "닭가슴살포케",
+
+      category: "밥·포케",
       price: 11900,
       image: "images/menu-chicken-poke.jpg",
       alt: "닭가슴살포케",
     },
     {
       name: "새우알리오올리오",
+
+      category: "파스타",
       price: 12900,
       image: "images/menu-shrimp-aglio.jpg",
       alt: "새우알리오올리오",
     },
     {
       name: "미트소스파스타",
+
+      category: "파스타",
       price: 12900,
       image: "images/menu-meat-pasta.jpg",
       alt: "미트소스파스타",
     },
     {
       name: "크림파스타",
+
+      category: "파스타",
       price: 12900,
       image: "images/menu-cream-pasta.jpg",
       alt: "크림파스타",
     },
     {
       name: "봉골레파스타",
+
+      category: "파스타",
       price: 12900,
       image: "",
       alt: "봉골레파스타",
     },
     {
       name: "해물볶음밥",
+
+      category: "밥·포케",
       price: 10900,
       image: "images/menu-seafood-rice.jpg",
       alt: "해물볶음밥",
     },
     {
       name: "김치볶음밥",
+
+      category: "밥·포케",
       price: 7900,
       image: "images/menu-kimchi-rice.jpg",
       alt: "김치볶음밥",
     },
     {
       name: "오늘의스프",
+
+      category: "브런치",
       price: 5900,
       image: "images/menu-soup.jpg",
       alt: "오늘의스프",
     },
     {
       name: "아메리카노(HOT&ICE)",
+
+      category: "커피",
       price: 3500,
       image: "images/menu-americano.jpg",
       alt: "아메리카노(HOT&ICE)",
     },
     {
       name: "헤이즐럿(HOT&ICE)",
+
+      category: "커피",
       price: 4000,
       image: "images/menu-hazelnut.jpg",
       alt: "헤이즐럿(HOT&ICE)",
     },
     {
       name: "카푸치노",
+
+      category: "커피",
       price: 4000,
       image: "images/menu-cappuccino.jpg",
       alt: "카푸치노",
     },
     {
       name: "카페라떼(HOT&ICE)",
+
+      category: "커피",
       price: 4000,
       image: "images/menu-latte.jpg",
       alt: "카페라떼(HOT&ICE)",
     },
     {
       name: "돌체(연유)라떼(HOT&ICE)",
+
+      category: "커피",
       price: 4500,
       image: "images/menu-dolce-latte.jpg",
       alt: "돌체(연유)라떼(HOT&ICE)",
     },
     {
       name: "바닐라라떼(HOT&ICE)",
+
+      category: "커피",
       price: 4500,
       image: "images/menu-vanilla-latte.jpg",
       alt: "바닐라라떼(HOT&ICE)",
     },
     {
       name: "카라멜마끼아또(HOT&ICE)",
+
+      category: "커피",
       price: 4500,
       image: "images/menu-caramel-macchiato.jpg",
       alt: "카라멜마끼아또(HOT&ICE)",
     },
     {
       name: "카페모카(HOT&ICE)",
+
+      category: "커피",
       price: 5000,
       image: "images/menu-mocha.jpg",
       alt: "카페모카(HOT&ICE)",
     },
     {
       name: "식혜",
+
+      category: "음료",
       price: 4000,
       image: "images/menu-sikhye.jpg",
       alt: "식혜",
     },
     {
       name: "수박주스",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-watermelon-juice.jpg",
       alt: "수박주스",
     },
     {
       name: "패션후르츠에이드",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-passion-ade.jpg",
       alt: "패션후르츠에이드",
     },
     {
       name: "자몽에이드(착즙)",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-grapefruit-ade.jpg",
       alt: "자몽에이드(착즙)",
     },
     {
       name: "청귤에이드(수제청)",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-green-tangerine-ade.jpg",
       alt: "청귤에이드(수제청)",
     },
     {
       name: "레몬에이드(수제청)",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-lemon-ade.jpg",
       alt: "레몬에이드(수제청)",
     },
     {
       name: "딸기에이드(수제청)",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-strawberry-ade.jpg",
       alt: "딸기에이드(수제청)",
     },
     {
       name: "딸기라떼(수제청)",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-strawberry-latte.jpg",
       alt: "딸기라떼(수제청)",
     },
     {
       name: "청포도에이드",
+
+      category: "음료",
       price: 6000,
       image: "images/menu-green-grape-ade.jpg",
       alt: "청포도에이드",
     },
     {
       name: "복숭아아이스티",
+
+      category: "음료",
       price: 4000,
       image: "images/menu-peach-tea.jpg",
       alt: "복숭아아이스티",
     },
     {
       name: "레몬차(수제청)",
+
+      category: "음료",
       price: 5000,
       image: "images/menu-lemon-tea.jpg",
       alt: "레몬차(수제청)",
     },
     {
       name: "청귤차(수제청)",
+
+      category: "음료",
       price: 5000,
       image: "images/menu-green-tangerine-tea.jpg",
       alt: "청귤차(수제청)",
     },
     {
       name: "유자차",
+
+      category: "음료",
       price: 4000,
       image: "images/menu-yuja-tea.jpg",
       alt: "유자차",
     },
     {
       name: "핫초코",
+
+      category: "음료",
       price: 4500,
       image: "images/menu-hot-chocolate.jpg",
       alt: "핫초코",
