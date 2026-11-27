@@ -257,6 +257,23 @@ a:visited {
   white-space: nowrap;
 }
 
+.hero--scene {
+  position: relative;
+  padding: 0 0 2.5rem;
+  overflow: hidden;
+  background: #f3eee6;
+}
+
+.hero__scene {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__scene-copy {
+  position: relative;
+}
+
 .hero__grid {
   display: grid;
   gap: 1.5rem;
@@ -681,15 +698,23 @@ h1 {
     padding-inline: 1.5rem;
   }
 
-  .hero.section {
-    padding-top: 2.75rem;
-    padding-bottom: 4.75rem;
+  .hero.section.hero--scene {
+    padding: 0;
   }
 
-  .hero__grid {
-    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-    gap: clamp(2rem, 4vw, 4.5rem);
+  .hero__scene-copy {
+    position: absolute;
+    top: 0;
+    right: max(1.5rem, calc((100% - 1120px) / 2));
+    bottom: 0;
+    z-index: 1;
+    display: flex;
     align-items: center;
+    width: min(40%, 28rem);
+  }
+
+  .hero--scene .hero__intro {
+    max-width: none;
   }
 
   .photo--hero {
@@ -751,8 +776,8 @@ h1 {
     padding: 3.25rem 0;
   }
 
-  .hero.section {
-    padding-top: 1.35rem;
+  .hero.section.hero--scene {
+    padding: 0 0 1.5rem;
   }
 
   .section--about {

@@ -61,11 +61,13 @@ function headerHtml(data) {
 function heroHtml(data) {
   const hero = data.hero;
   return [
-    '<section class="hero section" aria-labelledby="hero-title">',
-    '<div class="wrap hero__grid">',
-    '<div class="hero__media">',
-    photoFrame({ src: hero.image, alt: hero.alt, icon: "window", variant: "photo--hero" }),
-    "</div>",
+    '<section class="hero section hero--scene" aria-labelledby="hero-title">',
+    '<img class="hero__scene" src="',
+    escapeAttr(hero.image),
+    '" alt="',
+    escapeAttr(hero.alt),
+    '" />',
+    '<div class="wrap hero__scene-copy">',
     '<div class="hero__copy">',
     '<h1 id="hero-title">',
     textToHtml(hero.title),
