@@ -493,6 +493,10 @@ h1 {
   background: var(--sand);
 }
 
+.lunch-scroller {
+  margin-top: 1.15rem;
+}
+
 .group-panel__text {
   max-width: 40rem;
   margin-top: 0.85rem;

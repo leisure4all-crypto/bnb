@@ -38,7 +38,7 @@ const SITE_DATA = {
   },
 
   // 아래 사진 파일은 네이버 플레이스 바비앤밥에 매장이 올린 메뉴·매장 사진입니다.
-  // 창가 사진(images/space-window.jpg)은 공식 사진이 없어 비어 있습니다.
+  // 창가 사진은 당근에 매장이 올린 커튼 창 사진입니다.
   hero: {
     image: "images/hero.jpg",
     alt: "바비 좋아! 브런치",
@@ -260,7 +260,7 @@ const SITE_DATA = {
     {
       name: "창가",
       image: "images/space-window.jpg",
-      alt: "창가",
+      alt: "커튼을 친 창가",
       icon: "window",
     },
     {
@@ -273,6 +273,12 @@ const SITE_DATA = {
       name: "내부",
       image: "images/space-room.jpg",
       alt: "매장 내부",
+      icon: "store",
+    },
+    {
+      name: "홀",
+      image: "images/space-hall.jpg",
+      alt: "테이블과 카운터가 있는 홀",
       icon: "store",
     },
     {
@@ -297,6 +303,16 @@ const SITE_DATA = {
     daangnLabel: "당근에서 주문",
     // 확정 가격이 있으면 적습니다. 비어 있으면 숨깁니다.
     priceNote: "",
+    // 당근 단체 도시락 소식에 매장이 올린 사진입니다. 따로 적힌 메뉴명·가격은 없습니다.
+    images: [
+      { name: "샌드위치 도시락", image: "images/lunch-sandwich.jpg", alt: "샌드위치와 김밥 도시락" },
+      { name: "모둠 도시락", image: "images/lunch-set.jpg", alt: "샌드위치, 김밥, 튀김이 담긴 도시락" },
+      { name: "김밥 도시락", image: "images/lunch-gimbap.jpg", alt: "김밥과 샌드위치가 담긴 도시락" },
+      { name: "브런치 도시락", image: "images/lunch-brunch.jpg", alt: "소시지와 마늘빵이 담긴 도시락" },
+      { name: "간식 도시락", image: "images/lunch-snack.jpg", alt: "샌드위치와 음료가 담긴 도시락" },
+      { name: "볶음밥 도시락", image: "images/lunch-rice.jpg", alt: "볶음밥 도시락" },
+      { name: "한식 도시락", image: "images/lunch-korean.jpg", alt: "밥과 반찬이 담긴 도시락" },
+    ],
   },
 
   // 페이지 맨 위, 첫 화면 앞에 나옵니다. paragraphs의 문장을 고치거나 줄을 빼면 화면에 반영됩니다.

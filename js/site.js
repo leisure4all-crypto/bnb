@@ -163,7 +163,7 @@ function groupHtml(data, phoneHref) {
       return String(line || "").trim();
     })
     .filter(Boolean);
-  if (!lines.length && !group.phoneLabel && !group.daangnLabel) return "";
+  if (!lines.length && !group.phoneLabel && !group.daangnLabel && !(group.images || []).length) return "";
 
   const priceNote = String(group.priceNote || "").trim();
   if (priceNote) lines.push(priceNote);
@@ -174,6 +174,32 @@ function groupHtml(data, phoneHref) {
     })
     .join("");
 
+  const photos = (group.images || [])
+    .filter(function (item) {
+      return item && String(item.image || "").trim();
+    })
+    .map(function (item) {
+      return [
+        "<li>",
+        '<article class="menu-card">',
+        photoFrame({ src: item.image, alt: item.alt || item.name, icon: "plate" }),
+        '<div class="menu-card__body">',
+        '<h3 class="menu-card__name">',
+        escapeHtml(item.name || ""),
+        "</h3>",
+        "</div>",
+        "</article>",
+        "</li>",
+      ].join("");
+    })
+    .join("");
+
+  const scroller = photos
+    ? '<ul class="menu-scroller lunch-scroller" tabindex="0" aria-label="단체 도시락 사진. 옆으로 스크롤할 수 있습니다.">' +
+      photos +
+      "</ul>"
+    : "";
+
   return [
     '<section class="section section--group" id="group" aria-labelledby="group-title">',
     '<div class="wrap">',
@@ -181,6 +207,7 @@ function groupHtml(data, phoneHref) {
     '<h2 id="group-title" class="section-title">',
     escapeHtml(group.title || "단체 도시락 주문"),
     "</h2>",
+    scroller,
     body,
     '<div class="hero__actions">',
     '<a class="btn btn--solid" href="',
