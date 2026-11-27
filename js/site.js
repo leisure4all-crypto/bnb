@@ -29,6 +29,7 @@ function render(app, data) {
     spaceHtml(data),
     groupHtml(data, phoneHref),
     visitHtml(data, phoneHref),
+    aboutHtml(data),
     "</main>",
     footerHtml(data),
     dockHtml(data, phoneHref),
@@ -107,9 +108,10 @@ function menuHtml(data) {
     '<section class="section section--menu" id="menu" aria-labelledby="menu-title">',
     '<div class="wrap">',
     '<div class="section-head">',
-    '<h2 id="menu-title" class="section-title">대표 메뉴</h2>',
+    '<h2 id="menu-title" class="section-title">메뉴</h2>',
+    '<p class="menu-hint">옆으로 넘겨 보세요.</p>',
     "</div>",
-    '<ul class="menu-grid">',
+    '<ul class="menu-scroller" tabindex="0" aria-label="전체 메뉴. 옆으로 스크롤할 수 있습니다.">',
     cards,
     "</ul>",
     "</div>",
@@ -217,6 +219,44 @@ function visitHtml(data, phoneHref) {
     rows,
     "</dl>",
     "</address>",
+    "</div>",
+    "</section>",
+  ].join("");
+}
+
+function aboutHtml(data) {
+  const about = data.about || {};
+  const paragraphs = (about.paragraphs || [])
+    .map(function (line) {
+      return String(line || "").trim();
+    })
+    .filter(Boolean);
+  const extras = [];
+  const owner = String(about.ownerName || "").trim();
+  const opened = String(about.openedYear || "").trim();
+  const story = String(about.story || "").trim();
+
+  if (owner) extras.push("사장님 " + owner);
+  if (opened) extras.push(opened + "년 개업");
+  if (story) extras.push(story);
+  if (!paragraphs.length && !extras.length) return "";
+
+  const body = paragraphs
+    .concat(extras)
+    .map(function (line) {
+      return "<p>" + textToHtml(line) + "</p>";
+    })
+    .join("");
+
+  return [
+    '<section class="section section--about" id="about" aria-labelledby="about-title">',
+    '<div class="wrap about__layout">',
+    '<h2 id="about-title" class="section-title">',
+    escapeHtml(about.title || "바비앤밥 소개"),
+    "</h2>",
+    '<div class="about__body">',
+    body,
+    "</div>",
     "</div>",
     "</section>",
   ].join("");
