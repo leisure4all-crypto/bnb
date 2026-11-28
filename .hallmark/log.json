@@ -1,0 +1,31 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Menu Board",
+  "theme": "loom",
+  "axes": "light/roman-serif/cool",
+  "hero": "Stage",
+  "nav": "edge-aligned",
+  "footer": "mast",
+  "imagery": "photographs, the shop own",
+  "photos": [],
+  "entry": "none",
+  "fingerprint": "stage/edge/mast/rows/rail/bento",
+  "sections": [
+   "hero",
+   "about rows",
+   "menu switcher",
+   "group rail",
+   "reviews index",
+   "space bento",
+   "visit spec rows",
+   "footer mast"
+  ],
+  "signature": "brunch set plate at seven columns with its price",
+  "waived": [],
+  "prompt": "neighbourhood brunch cafe in Chuncheon",
+  "date": "2026-11-28"
+ }
+]
