@@ -145,7 +145,7 @@ hours: {
 
 ## 디자인 메모
 
-- 색은 `css/style.css` 맨 위 변수입니다. 남색(`--navy`), 노른자(`--yolk`), 접시 흰색(`--plate`)이 기본이고, 접시의 남색 꽃무늬와 노른자 색에서 가져왔습니다.
-- 글꼴은 Google Fonts의 Black Han Sans(제목·가격)와 IBM Plex Sans KR(본문)입니다. 인터넷 연결이 없으면 시스템 글꼴로 대신 나옵니다.
+- 색과 글꼴은 `css/tokens.css` 변수입니다. 미색 종이(`--color-paper`), 먹색 글자(`--color-ink`), 남색 버튼(`--color-accent`)이 기본입니다. `css/base.css`는 공통 기본값이고, 화면 배치는 `css/style.css`에 있습니다.
+- 글꼴은 Google Fonts의 나눔명조(제목·가격)와 IBM Plex Sans KR(본문)입니다. 인터넷 연결이 없으면 시스템 글꼴로 대신 나옵니다.
 - 첫 화면의 호수·산·해·안개는 `js/site.js`의 `HERO_SCENE`(SVG)와 `css/style.css`의 `.hero__*` 규칙입니다. 안개 움직임은 OS에서 움직임 줄이기를 켜면 멈춥니다.
 - 푸터 위 산 능선은 `FOOTER_RIDGE`입니다.
